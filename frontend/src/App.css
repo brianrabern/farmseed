@@ -1,0 +1,77 @@
+/* App.css */
+
+/* Style for the main container */
+main {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #cfdbd5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* Style for the page title */
+h1 {
+  text-align: center;
+  font-weight: bold;
+  color: #333533;
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+
+/* Style for individual thing items */
+div {
+  background-color: #f5cb5c;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #333533;
+  border-radius: 5px;
+}
+/* Style for the Add button */
+label + button {
+  background-color: #43aa8b;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 50px;
+}
+
+label + button:hover {
+  background-color: #7e7171; /* New background color on hover */
+}
+/* Style for the delete button */
+button {
+  background-color: #e5383b;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+button:hover {
+  background-color: #7e7171; /* New background color on hover */
+}
+
+/* Style for input fields and the Add button */
+input {
+  width: 50%;
+  padding: 5px;
+  background-color: #e8eddf;
+  border: 1px solid #333533;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+
+/* Style for horizontal lines */
+hr {
+  border: none;
+}
+
+#simplifyJobsContainer {
+  border: none;
+  display: none;
+}
