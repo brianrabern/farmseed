@@ -43,6 +43,18 @@ Ensure you have the following prerequisites installed on your development enviro
    mongod --dbpath ~/data/db
    ```
 
+   d. In the MongoDB Shell add a db and put a thing in a collection:
+
+   ```bash
+   mongosh
+   ```
+
+   ```sql
+   > use farmdb
+   > db.createCollection("things")
+   > db.things.insertOne({"name":"Thing1","description":"A thing that shines"})
+   ```
+
 3. Set up FastAPI backend
 
    - `cd backend`
