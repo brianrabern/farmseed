@@ -2,6 +2,8 @@
 
 A seed project for building web applications using the FARM stack - FastAPI, React, and MongoDB.
 
+![Screenshot](farm_wire.png)
+
 ## About
 
 This project provides a starting point for building a web app using Python's FastAPI for the backend API, React for the frontend, and MongoDB as the database. It includes basic scaffolding of each component to get started.
