@@ -56,7 +56,7 @@ function App() {
 
   return (
     <main>
-      <h1>Basic FARM Stack</h1>
+      <h1>FARM Seed</h1>
 
       {data &&
         data.things.map((thing) => (
