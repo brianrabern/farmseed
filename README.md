@@ -10,15 +10,15 @@ This project provides a starting point for building a web app using Python's Fas
 
 ## Getting Started
 
-### Prerequisites
+There are two options: (i) Local Development: You can spin it up on locahost or (ii) Docker: use the provided docker files to spin it up in Docker containers. Both options are outlined below.
+
+### Option (i): Localhost Installation
 
 Ensure you have the following prerequisites installed on your development environment:
 
 - Python 3.7+
 - Node.js
 - MongoDB
-
-### Installation
 
 1. Clone the repo
 
@@ -70,15 +70,48 @@ Ensure you have the following prerequisites installed on your development enviro
 The FastAPI backend will run on `http://localhost:8000`.
 The React frontend will run on `http://localhost:3000`.
 
+### Option (ii): Docker Containers
+
+Ensure you have Docker installed.
+
+1. Clone the repo, and cd into it.
+
+   ```bash
+   git clone https://github.com/brianrabern/farmseed.git
+   cd farmseed
+   ```
+
+2. Update main.py:
+
+   Open the backend/main.py file.
+
+   Comment out the local MongoDB connection string and uncomment the Docker Compose MongoDB connection string:
+
+   ```python
+   # connection = "mongodb://localhost:27017/"
+   connection = "mongodb://database:27017/"
+   ```
+
+3. Docker build and spin up:
+
+```bash
+docker-compose build
+docker-compose up
+```
+
 ## Usage
 
 The FastAPI backend offers essential API endpoints for standard CRUD (Create, Read, Update, Delete) operations. The React frontend includes sample components that correspond to these endpoints, providing a starting point for your user interface.
 
-You can extend the project's functionality by:
+You can extend or adjust the project's functionality by:
 
 - Defining Pydantic models for your data.
-- Expanding the range of React components and creating new pages.
+- Expanding the range of React components, add detail page, etc..
 - Implementing user authentication for enhanced security.
-- Containerizing the application using Docker to simplify deployment and scaling.
+- Set up unit tests and integration tests
+- Replace or supplement the use of the built-in fetch API with Axios
+- Replace the MongoDB database with a relational database like MariaDB
 
 With FARM seed, you have a versatile and well-structured base for building web applications using the FARM stack. Feel free to tailor it to your specific project requirements and scale it as needed.
+
+-- B.Rabern::2023 --

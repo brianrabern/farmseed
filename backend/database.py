@@ -1,7 +1,9 @@
 from pymongo import MongoClient
 from bson import ObjectId
 
-connection = "mongodb://localhost:27017/"
+connection = "mongodb://localhost:27017/"  # if using local mongodb
+# connection = "mongodb://database:27017/"  # if using docker-compose
+
 client = MongoClient(connection)
 db = client["farmdb"]
 collection = db["things"]
