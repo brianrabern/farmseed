@@ -1,5 +1,8 @@
 from fastapi import FastAPI
-from database import get_all, get_one, post_one, delete_one, update_one
+
+# from database_sql import get_all, get_one, post_one, update_one, delete_one
+
+from database import get_all, get_one, post_one, update_one, delete_one
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -30,11 +33,11 @@ def post_one_thing(thing: dict):
     return post_one(thing)
 
 
-@app.delete("/things/{thing_id}")
-def delete_one_thing(thing_id: str):
-    return delete_one(thing_id)
-
-
 @app.put("/things/{thing_id}")
 def update_one_thing(thing_id: str, thing: dict):
     return update_one(thing_id, thing)
+
+
+@app.delete("/things/{thing_id}")
+def delete_one_thing(thing_id: str):
+    return delete_one(thing_id)

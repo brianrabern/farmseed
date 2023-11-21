@@ -99,6 +99,67 @@ docker-compose build
 docker-compose up
 ```
 
+## Bonus: SQL
+
+If you'd like to use a relational database instead, you can replace the MongoDB with MySQL (or MariaDB) or PostgreSQL. Here is the basics for MariaDB using mysql.connector. These instructions are for localhost.
+
+1. **Install MariaDB:**
+   a. Download and install MariaDB.
+
+   ```bash
+   brew install mariadb
+   ```
+
+   b. Start MariaDB service:
+
+   ```bash
+   brew services start mariadb
+   ```
+
+2. **Set Up MariaDB Database:**
+   a. Access the MariaDB shell:
+
+   ```bash
+   mysql
+   ```
+
+   b. Create a database and switch to it:
+
+   ```sql
+   CREATE DATABASE farmsql;
+   USE farmsql;
+   ```
+
+   c. Create a table named `things`:
+
+   ```sql
+   CREATE TABLE `things` (
+       _id INT AUTO_INCREMENT PRIMARY KEY,
+       name VARCHAR(255) DEFAULT NULL,
+       description VARCHAR(255) DEFAULT NULL
+   );
+   ```
+
+   d. Insert a sample record into the `things` table:
+
+   ```sql
+   INSERT INTO things (name, description) VALUES ('Thing1', 'A thing that shines');
+   ```
+
+3. Switch from using MongoDB to MariaDB (SQL) in the `main.py` file.
+
+   a. Comment out the MongoDB-related imports:
+
+   ```python
+   # from database import get_all, get_one, post_one, update_one, delete_one
+   ```
+
+   b. Uncomment the SQL-related imports:
+
+   ```python
+   from database_sql import get_all, get_one, post_one, update_one, delete_one
+   ```
+
 ## Usage
 
 The FastAPI backend offers essential API endpoints for standard CRUD (Create, Read, Update, Delete) operations. The React frontend includes sample components that correspond to these endpoints, providing a starting point for your user interface.
@@ -110,7 +171,6 @@ You can extend or adjust the project's functionality by:
 - Implementing user authentication for enhanced security.
 - Set up unit tests and integration tests
 - Replace or supplement the use of the built-in fetch API with Axios
-- Replace the MongoDB database with a relational database like MariaDB
 
 With FARM seed, you have a versatile and well-structured base for building web applications using the FARM stack. Feel free to tailor it to your specific project requirements and scale it as needed.
 
